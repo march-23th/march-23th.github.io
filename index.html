@@ -3,13 +3,79 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<link rel="stylesheet" href="index.css">	<!-- link to css file -->
+	<title>march23th</title>
 </head>
-<body style="background: greenyellow;">
-	<center><img src="assects/doge.jpg"	alt="photo"	width="390" height="252"></center>
-	<hr width="50%">
-	<p style="color: red;text-align: center;"><strong>Chào bạn mình tên là Doge</strong></p>
-	<p style="color: red;text-align: center;"><strong>rất vui vì được gặp bạn</strong></p>
-	<h1 style="color: red;text-align: center;">Địt mẹ bạn</h1>
+<body>
+	<h1 id="mywebsite">My website</h1>
+	<nav>	<!-- thẻ nav để dành cho menu -->
+		<a href="#infor" class="left">information</a>
+		<a href="#edu" class="left">education</a>
+		<a href="#scores" class="left">scores</a>
+		<a href="#contact" class="left">contact</a>
+		<a class="right">Hotline 18001000</a>
+	</nav>
+
+
+
+	<div id="flex-container">
+		<div id="flex-left">
+			<h2 id="infor">Contact information</h2>
+			<p><em>I am a student in the information technology field.</em></p>
+			<ul>
+				<li><strong>Fullname: </strong>Le Vu Ca</li>
+				<li><strong>Country: </strong>Vietnam</li>
+			</ul>
+			<hr>
+			<h2 id="edu">Education</h2>
+			<ol style="1">
+				<li>Dien Hai High School</li>
+				<li>University of Information Technology</li>
+			</ol>
+		</div>
+		<div id="flex-right">
+			<h2 id="scores">Scores at University</h2>
+			<style>
+				table,th,td {
+					border: 1px solid black;
+					border-collapse: collapse;
+				}
+			</style>
+			<table style = "width:40%";>
+				<tr>
+					<td></td>
+					<th style="color: red;">Calculus</th>
+					<th style="color: red;">Coding</th>
+					<th style="color: red;">English</th>
+				</tr>
+				<tr>
+					<th>2022</th>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">9</td>
+					<td style="text-align: center;">8</td>
+				</tr>
+				<tr>
+					<th>2023</th>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">9.5</td>
+				</tr>
+				<tr>
+					<th>2024</th>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">10</td>
+				</tr>
+			</table>
+			<br>
+			<hr>
+			<h2 id="contact">Contact Us</h2>
+			<p>Facebook: <a href="https://www.facebook.com/profile.php?id=100035252613477">Lê Ca</a></p>
+			<p>Email: <a href="mailto: lec3723@gmail.com">lec3723@gmail.com</a> </p>
+		</div>
+	</div>
+	<footer>
+		Created by CaLe - contact us by 0835979893
+	</footer>
 </body>
 </html>
