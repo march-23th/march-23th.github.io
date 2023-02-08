@@ -37,6 +37,7 @@ nav a:hover{
 
 #flex-container {
 	display: flex;
+	flex-wrap: nowrap;
 }
 
 #flex-left {
@@ -49,6 +50,33 @@ nav a:hover{
 	padding: 40px;
 	flex: 70%;
 }
+
+table,th,td {
+	border: 1px solid #DDD;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+table tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+table th{
+	background-color: #34ebba;
+	color: #404547;
+}
+
+@media(max-width: 600px){
+	#flex-container {
+		flex-wrap: wrap;
+	}
+	#flex-left{
+		flex: 100%;
+	}
+	#flex-right{
+		flex: 100%;
+	}
+} 
 
 
 
