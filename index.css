@@ -66,6 +66,16 @@ table th{
 	color: #404547;
 }
 
+
+
+footer {
+	background-color: #333;
+	padding: 10px;
+	color: white;
+	text-align: center;
+}
+
+
 @media(max-width: 600px){
 	#flex-container {
 		flex-wrap: wrap;
@@ -77,12 +87,3 @@ table th{
 		flex: 100%;
 	}
 } 
-
-
-
-footer {
-	background-color: #333;
-	padding: 10px;
-	color: white;
-	text-align: center;
-}
