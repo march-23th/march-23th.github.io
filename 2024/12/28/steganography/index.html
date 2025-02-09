@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Steganography Project | March23rd</title><meta name="author" content="Le Ca"><meta name="copyright" content="Le Ca"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="OverviewXây dựng một ứng dụng giúp che giấu các thông tin vào các media bằng cách sử dụng các kỹ thuật steganographyĐảm bảo rằng các thông tin khi được giấu khó bị lộ và tấn công mà vẫn đảm bảo chất l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Steganography Project">
+<meta property="og:url" content="http://march-23th.github.io/2024/12/28/steganography/index.html">
+<meta property="og:site_name" content="March23rd">
+<meta property="og:description" content="OverviewXây dựng một ứng dụng giúp che giấu các thông tin vào các media bằng cách sử dụng các kỹ thuật steganographyĐảm bảo rằng các thông tin khi được giấu khó bị lộ và tấn công mà vẫn đảm bảo chất l">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://march-23th.github.io/assets/img/avt.jpg">
+<meta property="article:published_time" content="2024-12-27T17:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-08T08:18:58.199Z">
+<meta property="article:author" content="Le Ca">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://march-23th.github.io/assets/img/avt.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://march-23th.github.io/2024/12/28/steganography/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Steganography Project',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-02-08 15:18:58'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/assets/img/avt.jpg" onerror="onerror=null;src='/assets/img/404.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/assets/img/default_top_img.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="March23rd"><span class="site-name">March23rd</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Steganography Project</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-12-27T17:00:00.000Z" title="Created 2024-12-28 00:00:00">2024-12-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-02-08T08:18:58.199Z" title="Updated 2025-02-08 15:18:58">2025-02-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Project/">Project</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Steganography Project"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Xây dựng một ứng dụng giúp che giấu các thông tin vào các media bằng cách sử dụng các kỹ thuật <code>steganography</code><br>Đảm bảo rằng các thông tin khi được giấu khó bị lộ và tấn công mà vẫn đảm bảo chất lượng của các media không bị thay đổi</p>
+<h1 id="Cong-nghe-su-dung"><a href="#Cong-nghe-su-dung" class="headerlink" title="Công nghệ sử dụng"></a>Công nghệ sử dụng</h1><h2 id="🎵-Audio-Steganography"><a href="#🎵-Audio-Steganography" class="headerlink" title="🎵 Audio Steganography"></a>🎵 Audio Steganography</h2><h3 id="Least-Significant-Bit-LSB"><a href="#Least-Significant-Bit-LSB" class="headerlink" title="Least Significant Bit (LSB)"></a>Least Significant Bit (LSB)</h3><p><code>LSB</code> được sử dụng để giấu thông tin bằng cách chia file <code>wav</code> thành các mẫu âm thanh dưới dạng chuỗi <code>bit</code> -&gt; Với mỗi mẫu âm thanh, thay đổi <code>bit</code> có trọng số thấp nhất thành <code>bit</code> tương ứng của message cần giấu.</p>
+<p><img src="/../assets/img/ste1.jpg" alt="LSB"></p>
+<h3 id="Phase-Coding"><a href="#Phase-Coding" class="headerlink" title="Phase Coding"></a>Phase Coding</h3><p><code>Phase Coding</code> là một phương pháp <code>Audio Steganography</code> thay đổi pha của tín hiệu gốc để ẩn dữ liệu bí mật. Quá trình mã hóa chia tín hiệu thành các đoạn nhỏ, áp dụng Biến đổi <code>Fourier</code> rời rạc (DFT) để trích xuất pha và biên độ, sau đó thay đổi pha của đoạn đầu theo dữ liệu cần giấu. Tín hiệu được tái tạo bằng nghịch đảo DFT và ghép lại. </p>
+<p><img src="/../assets/img/ste2.jpg" alt="Phase Coding"></p>
+<h2 id="📸-Image-and-Video-Steganography"><a href="#📸-Image-and-Video-Steganography" class="headerlink" title="📸 Image and Video Steganography"></a>📸 Image and Video Steganography</h2><h3 id="Least-Significant-Bit-LSB-1"><a href="#Least-Significant-Bit-LSB-1" class="headerlink" title="Least Significant Bit (LSB)"></a>Least Significant Bit (LSB)</h3><p><code>LSB</code> được sử dụng để giấu thông tin bằng cách thay thế <code>bit</code> có trọng số nhỏ nhất trong giá trị <code>RGB</code>. Sự thay đổi này chỉ dao động <code>1</code> đơn vị, khó nhận ra bằng mắt thường.</p>
+<p><img src="/../assets/img/ste3.jpg" alt="LSB"></p>
+<h3 id="Discrete-Cosine-Transformation-DCT"><a href="#Discrete-Cosine-Transformation-DCT" class="headerlink" title="Discrete Cosine Transformation (DCT)"></a>Discrete Cosine Transformation (DCT)</h3><p><code>DCT</code> cho phép chuyển đổi dữ liệu từ không gian ảnh sang không gian tần số, tập trung vào các hệ số tần số thấp để loại bỏ thông tin dư thừa.</p>
+<p><img src="/../assets/img/ste4.jpg" alt="DCT"></p>
+<h3 id="Pixel-Value-Differencing-PVD"><a href="#Pixel-Value-Differencing-PVD" class="headerlink" title="Pixel Value Differencing (PVD)"></a>Pixel Value Differencing (PVD)</h3><p><code>PVD</code> tận dụng sự chênh lệch giữa các cặp <code>pixel</code> liền kề thay vì nhúng trực tiếp vào từng <code>pixel</code>. Bằng cách điều chỉnh độ chênh lệch để chứa dữ liệu bí mật, thuật toán đảm bảo mã hóa thông tin một cách tinh tế, giữ nguyên chất lượng ảnh. Dữ liệu được phân bố đều trong mối quan hệ giữa các <code>pixel</code>, tăng tính bảo mật và giảm khả năng bị phát hiện.</p>
+<p><img src="/../assets/img/ste5.jpg" alt="PVD"></p>
+<h2 id="Danh-gia-cac-thuat-toan"><a href="#Danh-gia-cac-thuat-toan" class="headerlink" title="Đánh giá các thuật toán"></a>Đánh giá các thuật toán</h2><p><code>MSE</code>: Đo mức độ khác biệt trung bình giữa ảnh gốc và ảnh nhúng, <code>MSE</code> càng nhỏ, chất lượng ảnh sau khi nhúng càng tốt</p>
+<p><img src="/../assets/img/ste6.jpg" alt="MSE"></p>
+<p><code>PSNR</code>: Đo mức độ tương đồng giữa ảnh gốc và ảnh bị biến đổi (sau nhúng, nén, hoặc xử lý), thể hiện mức độ nhiễu (noise) được thêm vào ảnh. Càng lớn càng tốt</p>
+<p><img src="/../assets/img/ste7.jpg" alt="PSNR"></p>
+<h3 id="Ket-qua-danh-gia"><a href="#Ket-qua-danh-gia" class="headerlink" title="Kết quả đánh giá"></a>Kết quả đánh giá</h3><p><img src="/../assets/img/ste8.jpg" alt="KQDG"><br><code>LSB</code> cho phép giấu nhiều dữ liệu nhưng gây biến dạng hình ảnh vừa phải. <code>PVD</code> cân bằng tốt giữa dung lượng giấu tin và chất lượng ảnh, với <code>MSE</code> thấp và <code>PSNR</code> cao, đảm bảo ảnh gần như không thay đổi. <code>DCT</code> có dung lượng giấu tin thấp, chất lượng ảnh kém hơn (<code>MSE</code> cao, <code>PSNR</code> thấp) nhưng phù hợp cho các ứng dụng ưu tiên bảo mật.</p>
+<h1 id="Kien-truc-ung-dung"><a href="#Kien-truc-ung-dung" class="headerlink" title="Kiến trúc ứng dụng"></a>Kiến trúc ứng dụng</h1><p><img src="/../assets/img/ste9.jpg" alt="KT"></p>
+<p><code>AES-GCM</code> là thuật toán mã hóa được sử dụng để mã hóa dữ liệu trước khi được nhúng vào các media và giải mã sau đó. <code>AES-GCM</code> được sử dụng để mã hóa dữ liệu vì nó cung cấp cả tính bảo mật và tính toàn vẹn với hiệu suất cao.</p>
+<h1 id="Link-Github"><a href="#Link-Github" class="headerlink" title="Link Github"></a>Link Github</h1><p><a target="_blank" rel="noopener" href="https://github.com/qub1tt/NT140---Steganography">Steganography</a></p>
+<hr>
+<br></article><div class="tag_share"><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/02/08/reinforcementlearning/" title="Reinforcement Learning"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">Reinforcement Learning</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/03/bookstorewebsite/" title="Selling Books Website Project"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Selling Books Website Project</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/assets/img/avt.jpg" onerror="this.onerror=null;this.src='/assets/img/404.jpg'" alt="avatar"/></div><div class="author-info__name">Le Ca</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="/aboutme"><i class="fab fa-accessible-icon"></i><span>About me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lvcmarch23th" target="_blank" title="Github"><i class="fab fa-github" style="color: #dadfe8;"></i></a><a class="social-icon" href="https://www.facebook.com/le.ca.982335/" target="_blank" title="Facebook"><i class="fab fa-facebook" style="color: #dadfe8;"></i></a><a class="social-icon" href="https://t.me/CvShun" target="_blank" title="Telegram"><i class="fab fa-telegram" style="color: #dadfe8;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cong-nghe-su-dung"><span class="toc-number">2.</span> <span class="toc-text">Công nghệ sử dụng</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%B5-Audio-Steganography"><span class="toc-number">2.1.</span> <span class="toc-text">🎵 Audio Steganography</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Least-Significant-Bit-LSB"><span class="toc-number">2.1.1.</span> <span class="toc-text">Least Significant Bit (LSB)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Phase-Coding"><span class="toc-number">2.1.2.</span> <span class="toc-text">Phase Coding</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%B8-Image-and-Video-Steganography"><span class="toc-number">2.2.</span> <span class="toc-text">📸 Image and Video Steganography</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Least-Significant-Bit-LSB-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">Least Significant Bit (LSB)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discrete-Cosine-Transformation-DCT"><span class="toc-number">2.2.2.</span> <span class="toc-text">Discrete Cosine Transformation (DCT)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pixel-Value-Differencing-PVD"><span class="toc-number">2.2.3.</span> <span class="toc-text">Pixel Value Differencing (PVD)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Danh-gia-cac-thuat-toan"><span class="toc-number">2.3.</span> <span class="toc-text">Đánh giá các thuật toán</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ket-qua-danh-gia"><span class="toc-number">2.3.1.</span> <span class="toc-text">Kết quả đánh giá</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Kien-truc-ung-dung"><span class="toc-number">3.</span> <span class="toc-text">Kiến trúc ứng dụng</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Link-Github"><span class="toc-number">4.</span> <span class="toc-text">Link Github</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/08/reinforcementlearning/" title="Reinforcement Learning">Reinforcement Learning</a><time datetime="2025-02-07T17:00:00.000Z" title="Created 2025-02-08 00:00:00">2025-02-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/28/steganography/" title="Steganography Project">Steganography Project</a><time datetime="2024-12-27T17:00:00.000Z" title="Created 2024-12-28 00:00:00">2024-12-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/03/bookstorewebsite/" title="Selling Books Website Project">Selling Books Website Project</a><time datetime="2024-06-02T17:00:00.000Z" title="Created 2024-06-03 00:00:00">2024-06-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Le Ca</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Reinforcement Learning | March23rd</title><meta name="author" content="Le Ca"><meta name="copyright" content="Le Ca"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Định nghĩa RL (Reinforcement Learning)Là một nhánh của ML, nghiên cứu cách thức mà một tác nhân học cách tương tác với môi trường đang ở một trạng thái nhất định thực hiện hành động và nhận phản hồi d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reinforcement Learning">
+<meta property="og:url" content="http://march-23th.github.io/2025/02/08/reinforcementlearning/index.html">
+<meta property="og:site_name" content="March23rd">
+<meta property="og:description" content="Định nghĩa RL (Reinforcement Learning)Là một nhánh của ML, nghiên cứu cách thức mà một tác nhân học cách tương tác với môi trường đang ở một trạng thái nhất định thực hiện hành động và nhận phản hồi d">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://march-23th.github.io/assets/img/avt.jpg">
+<meta property="article:published_time" content="2025-02-07T17:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-09T11:17:51.221Z">
+<meta property="article:author" content="Le Ca">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://march-23th.github.io/assets/img/avt.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://march-23th.github.io/2025/02/08/reinforcementlearning/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Reinforcement Learning',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-02-09 18:17:51'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/assets/img/avt.jpg" onerror="onerror=null;src='/assets/img/404.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/assets/img/default_top_img.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="March23rd"><span class="site-name">March23rd</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Reinforcement Learning</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-02-07T17:00:00.000Z" title="Created 2025-02-08 00:00:00">2025-02-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-02-09T11:17:51.221Z" title="Updated 2025-02-09 18:17:51">2025-02-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Research/">Research</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Reinforcement Learning"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Dinh-nghia-RL-Reinforcement-Learning"><a href="#Dinh-nghia-RL-Reinforcement-Learning" class="headerlink" title="Định nghĩa RL (Reinforcement Learning)"></a>Định nghĩa RL (Reinforcement Learning)</h1><p>Là một nhánh của <code>ML</code>, nghiên cứu cách thức mà một tác nhân học cách tương tác với môi trường đang ở một trạng thái nhất định thực hiện hành động và nhận phản hồi dưới dạng phần thưởng. Mục tiêu của tác nhân là tối ưu hóa phần thưởng theo thời gian bằng cách chọn hành động hợp lý.</p>
+<h2 id="Cac-thanh-phan-chinh-cua-RL"><a href="#Cac-thanh-phan-chinh-cua-RL" class="headerlink" title="Các thành phần chính của RL"></a>Các thành phần chính của RL</h2><p><strong>Agent</strong>: Là tác nhân sẽ tương tác với môi trường và đưa ra quyết định.<br><strong>Environment</strong>: Nơi mà tác nhân hoạt động, môi trường sẽ cung cấp phản hồi dựa trên các hành động của tác nhân.<br><strong>State</strong>: Tình trạng hiện tại của tác nhân trong môi trường.<br><strong>Action</strong>: Tập hợp các hành động có thể thực hiện của tác nhân.<br><strong>Reward</strong>: Đối với mỗi hành động sẽ có reward khác nhau, tác nhân sẽ chọn hành động thích hợp để tối đa tổng số reward nhận được.<br><strong>Policy π</strong>: Chiến lược giúp tác nhân chọn ra hành động phù hợp.<br><strong>Hàm giá trị (value function)</strong>: Hàm ước tính phần thưởng tích lũy dự kiến từ một trạng thái nhất định, giúp tác nhân dự đoán giá trị dài hạn của các hành động.</p>
+<p><img src="/../assets/img/rl1.jpg" alt="RL"></p>
+<h1 id="Cach-thuc-RL-hoat-dong"><a href="#Cach-thuc-RL-hoat-dong" class="headerlink" title="Cách thức RL hoạt động"></a>Cách thức RL hoạt động</h1><p>Tác nhân <code>A</code> thực hiện hành động trong trạng thái <code>S</code> của môi trường, Môi trường phản hồi phần thưởng <code>R</code> và tác nhân chuyển sang trạng thái <code>S&#39;</code>, tác nhân dùng phản hồi để cập nhật chính sách <code>π</code> nhằm cải thiện khả năng đưa ra quyết định chọn hành động.</p>
+<h1 id="Phan-loai-RL"><a href="#Phan-loai-RL" class="headerlink" title="Phân loại RL"></a>Phân loại RL</h1><h2 id="Hoc-theo-gia-tri"><a href="#Hoc-theo-gia-tri" class="headerlink" title="Học theo giá trị"></a>Học theo giá trị</h2><p>Không học trực tiếp các hành động, mà học cách <em>đánh giá</em> từng hành động ở mỗi trạng thái, nếu biết hành động nào đem giá trị cao nhất thì có thể chọn hành động đó.</p>
+<h3 id="Ham-gia-tri"><a href="#Ham-gia-tri" class="headerlink" title="Hàm giá trị"></a>Hàm giá trị</h3><p>Có 2 cách để đánh giá trị của một trạng thái</p>
+<ul>
+<li><p><strong>Giá trị của trạng thái V(s)</strong>: giá trị này cho biết liệu trạng thái <code>s</code> này có tốt hay không.<br><img src="/../assets/img/rl2.jpg" alt="RL"><br>-&gt; Tổng phần thưởng mong đợi khi bắt đầu từ trạng thái <code>s</code>và làm theo chính sách <code>𝜋</code>.</p>
+</li>
+<li><p><strong>Giá trị của hành động Q(s,a)</strong>: tác nhân đang ở trạng thái <code>s</code> và chọn hành động <code>a</code>, giá trị này cho biết hành động đó có tốt hay không.<br><img src="/../assets/img/rl3.jpg" alt="RL"><br>-&gt; Tổng phần thưởng mong đợi khi làm hành động <code>a</code> tại trạng thái <code>𝑠</code> và sau đó tiếp tục theo chính sách <code>𝜋</code>.</p>
+</li>
+</ul>
+<h3 id="Phuong-trinh-Bellman"><a href="#Phuong-trinh-Bellman" class="headerlink" title="Phương trình Bellman"></a>Phương trình Bellman</h3><p><img src="/../assets/img/rl4.jpg" alt="RL"><br>Chọn hành động tốt nhất ở trạng thái hiện tại. Giá trị của trạng thái hiện tại sẽ bằng phần thưởng ngay lập tức cộng với giá trị của trạng thái tiếp theo (có nhân hệ số chiết khấu <code>𝛾</code>).</p>
+<h3 id="Thuat-toan-Q-Learning"><a href="#Thuat-toan-Q-Learning" class="headerlink" title="Thuật toán Q-Learning"></a>Thuật toán Q-Learning</h3><p>Làm thế nào mà tác nhân biết phải chọn hành động nào để đạt được phần thưởng lớn nhất? Câu trả lời là sử dụng một giá trị gọi là <code>Q-value</code> được tính bằng công thức:<br><img src="/../assets/img/rl5.jpg" alt="RL"><br>Trong đó <code>Q(s, a)</code> là <code>Q-value</code> khi thực hiện hành động <code>a</code> tại trạng thái <code>s</code>; <code>r(s, a)</code> là phần thưởng nhận được; <code>s&#39;</code> là trạng thái kế tiếp. <code>γ</code> là hệ số chiết khấu, đảm bảo càng “xa” đích <code>Q-value</code> càng nhỏ.<br>Công thức này cho thấy Q<code>-value</code> của hành động <code>a</code> tại trạng thái <code>s</code> bằng <code>r(s,a)</code> cộng với <code>Q-value</code> lớn nhất của các trạng thái <code>s&#39;</code> tiếp theo khi thực hiện các hành động <code>a</code>. Từ đó với mỗi trạng thái thì tác nhân chỉ cần tìm hành động nào có <code>Q-value</code> lớn nhất là xong.</p>
+<h2 id="Hoc-theo-chinh-sach"><a href="#Hoc-theo-chinh-sach" class="headerlink" title="Học theo chính sách"></a>Học theo chính sách</h2><p>Thay vì học giá trị của từng trạng thái, thì tác nhân sẽ học trực tiếp một chính sách <code>π(a∣s)</code>, tức là một hàm trả về xác suất chọn mỗi hành động <code>a</code> tại trạng thái <code>𝑠</code>.</p>
+<h3 id="Ham-chinh-sach"><a href="#Ham-chinh-sach" class="headerlink" title="Hàm chính sách"></a>Hàm chính sách</h3><ul>
+<li><strong>Chính sách xác định</strong>: Mỗi trạng thái <code>s</code> chỉ có một hành động <code>a</code> tốt nhất.</li>
+<li><strong>Chính sách ngẫu nhiên</strong>: Với mỗi trạng thái <code>s</code> ta có xác xuất chọn các hành động <code>a</code>.</li>
+</ul>
+<h3 id="Gradient-chinh-sach"><a href="#Gradient-chinh-sach" class="headerlink" title="Gradient chính sách"></a>Gradient chính sách</h3><p>Chính sách sẽ được tối ưu bằng cách tính toán <code>gradient</code> theo công thức:<br><img src="/../assets/img/rl6.jpg" alt="RL"><br>Trong đó </p>
+<ul>
+<li><strong>πθ(a∣s)</strong>: là chính sách có tham số <code>𝜃</code>.</li>
+<li><strong>Qπ(s,a)</strong>: là giá trị kỳ vọng của hành động.</li>
+</ul>
+<p>-&gt; có nghĩa là nếu một hành động tốt, ta tăng xác suất chọn nó, nếu một hành động xấu, ta giảm xác suất chọn nó.</p>
+<h1 id="Code-vi-du"><a href="#Code-vi-du" class="headerlink" title="Code ví dụ"></a>Code ví dụ</h1><p>Chúng ta có một lưới 4×4, trong đó:</p>
+<ul>
+<li><code>S </code> là điểm bắt đầu.</li>
+<li><code>G</code> là đích đến, nhận phần thưởng +1</li>
+<li>Các ô còn lại có phần thưởng 0.</li>
+<li>Tác nhân có thể đi lên, xuống, trái, phải.</li>
+<li>Nếu đi ra ngoài biên thì vẫn ở nguyên vị trí cũ</li>
+</ul>
+<h4 id="Cau-hinh-cac-thanh-phan-RL"><a href="#Cau-hinh-cac-thanh-phan-RL" class="headerlink" title="Cấu hình các thành phần RL"></a>Cấu hình các thành phần RL</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="comment"># Khởi tạo môi trường Gridworld 4x4</span></span><br><span class="line">grid_size = <span class="number">4</span></span><br><span class="line">goal_state = (<span class="number">3</span>, <span class="number">3</span>)  <span class="comment"># Đích đến</span></span><br><span class="line">start_state = (<span class="number">0</span>, <span class="number">0</span>)  <span class="comment"># Bắt đầu</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Hành động: 0=Trái, 1=Phải, 2=Lên, 3=Xuống</span></span><br><span class="line">actions = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Q-table (khởi tạo với giá trị 0)</span></span><br><span class="line">Q_table = np.zeros((grid_size, grid_size, <span class="built_in">len</span>(actions)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tham số Q-learning</span></span><br><span class="line">alpha = <span class="number">0.1</span>   <span class="comment"># Learning rate</span></span><br><span class="line">gamma = <span class="number">0.9</span>   <span class="comment"># Discount factor</span></span><br><span class="line">epsilon = <span class="number">0.2</span> <span class="comment"># Tỷ lệ chọn hành động ngẫu nhiên (exploration)</span></span><br><span class="line">episodes = <span class="number">500</span> <span class="comment"># Số lần huấn luyện</span></span><br></pre></td></tr></table></figure>
+<h4 id="Ham-chon-hanh-dong-theo-epsilon-greedy"><a href="#Ham-chon-hanh-dong-theo-epsilon-greedy" class="headerlink" title="Hàm chọn hành động theo epsilon-greedy"></a>Hàm chọn hành động theo epsilon-greedy</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">choose_action</span>(<span class="params">state</span>):</span><br><span class="line">    <span class="keyword">if</span> random.uniform(<span class="number">0</span>, <span class="number">1</span>) &lt; epsilon:</span><br><span class="line">        <span class="keyword">return</span> random.choice(actions)  <span class="comment"># Chọn ngẫu nhiên (exploration)</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> np.argmax(Q_table[state[<span class="number">0</span>], state[<span class="number">1</span>]])  <span class="comment"># Chọn tốt nhất (exploitation)</span></span><br></pre></td></tr></table></figure>
+<h4 id="Ham-cap-nhat-trang-thai-sau-khi-hanh-dong"><a href="#Ham-cap-nhat-trang-thai-sau-khi-hanh-dong" class="headerlink" title="Hàm cập nhật trạng thái sau khi hành động"></a>Hàm cập nhật trạng thái sau khi hành động</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">take_action</span>(<span class="params">state, action</span>):</span><br><span class="line">    x, y = state</span><br><span class="line">    <span class="keyword">if</span> action == <span class="number">0</span>:  <span class="comment"># Trái</span></span><br><span class="line">        y = <span class="built_in">max</span>(y - <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">elif</span> action == <span class="number">1</span>:  <span class="comment"># Phải</span></span><br><span class="line">        y = <span class="built_in">min</span>(y + <span class="number">1</span>, grid_size - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">elif</span> action == <span class="number">2</span>:  <span class="comment"># Lên</span></span><br><span class="line">        x = <span class="built_in">max</span>(x - <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">elif</span> action == <span class="number">3</span>:  <span class="comment"># Xuống</span></span><br><span class="line">        x = <span class="built_in">min</span>(x + <span class="number">1</span>, grid_size - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> (x, y)</span><br></pre></td></tr></table></figure>
+<h4 id="Huan-luyen-Q-learning"><a href="#Huan-luyen-Q-learning" class="headerlink" title="Huấn luyện Q-learning"></a>Huấn luyện Q-learning</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> episode <span class="keyword">in</span> <span class="built_in">range</span>(episodes):</span><br><span class="line">    state = start_state</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> state != goal_state:</span><br><span class="line">        action = choose_action(state)</span><br><span class="line">        next_state = take_action(state, action)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Nhận phần thưởng</span></span><br><span class="line">        reward = <span class="number">1</span> <span class="keyword">if</span> next_state == goal_state <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Cập nhật Q-table</span></span><br><span class="line">        best_next_action = np.<span class="built_in">max</span>(Q_table[next_state[<span class="number">0</span>], next_state[<span class="number">1</span>]])</span><br><span class="line">        Q_table[state[<span class="number">0</span>], state[<span class="number">1</span>], action] += alpha * (reward + gamma * best_next_action - Q_table[state[<span class="number">0</span>], state[<span class="number">1</span>], action])</span><br><span class="line">        </span><br><span class="line">        state = next_state  <span class="comment"># Di chuyển sang trạng thái tiếp theo</span></span><br></pre></td></tr></table></figure>
+<h4 id="Ket-qua"><a href="#Ket-qua" class="headerlink" title="Kết quả"></a>Kết quả</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Q-table sau khi huấn luyện:&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(Q_table)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Q-table sau khi huấn luyện:</span></span><br><span class="line"><span class="string">[[[5.03046941e-01 3.91939956e-01 5.05053615e-01 5.90490000e-01]     # vị trí 0,0</span></span><br><span class="line"><span class="string">  [5.05817900e-01 3.85955472e-02 3.07584142e-02 1.31602057e-01]     # vị trí 0,1</span></span><br><span class="line"><span class="string">  [1.89813964e-01 0.00000000e+00 1.45147619e-02 0.00000000e+00]</span></span><br><span class="line"><span class="string">  [0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00]]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> [[5.49881773e-01 4.80994800e-01 4.86100469e-01 6.56100000e-01]     # vị trí 1,0</span></span><br><span class="line"><span class="string">  [5.82246787e-01 5.44322790e-03 6.34761699e-02 4.28711620e-02]     # vị trí 1,1</span></span><br><span class="line"><span class="string">  [0.00000000e+00 0.00000000e+00 0.00000000e+00 1.01328649e-01]</span></span><br><span class="line"><span class="string">  [0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00]]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> [[6.15849129e-01 5.41992655e-01 5.49568174e-01 7.29000000e-01]     # vị trí 2,0</span></span><br><span class="line"><span class="string">  [6.55909208e-01 4.75179120e-02 1.87123317e-01 1.53900000e-01]     # vị trí 2,1</span></span><br><span class="line"><span class="string">  [5.34209041e-01 5.48019630e-04 1.90424112e-03 9.00000000e-02]</span></span><br><span class="line"><span class="string">  [4.26826726e-02 0.00000000e+00 0.00000000e+00 0.00000000e+00]]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> [[6.77768974e-01 8.10000000e-01 6.11670963e-01 6.97538302e-01]     # vị trí 3,0</span></span><br><span class="line"><span class="string">  [7.10515290e-01 9.00000000e-01 5.50539513e-01 7.69221857e-01]     # vị trí 3,1</span></span><br><span class="line"><span class="string">  [7.58531125e-01 1.00000000e+00 3.34271253e-01 8.33898249e-01]</span></span><br><span class="line"><span class="string">  [0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00]]]</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>Ta có ma trận <code>4x4</code> tương ứng với lưới, ví dụ khi ở trạng thái <code>0,0</code> thì ta có các giá trị <em>trái, phải, lên, xuống</em> là <em>[5.03046941e-01 3.91939956e-01 5.05053615e-01 5.90490000e-01]</em>, do đó ta dễ dàng chọn được hành động là xuống do <code>Q-Value</code> của nó là <strong>lớn</strong> nhất, khi đó thì sẽ đến trạng thái <code>1,0</code> rồi tiếp tục cho đến khi đến được đích.</p>
+<hr>
+<br></article><div class="tag_share"><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/12/28/steganography/" title="Steganography Project"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Steganography Project</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/assets/img/avt.jpg" onerror="this.onerror=null;this.src='/assets/img/404.jpg'" alt="avatar"/></div><div class="author-info__name">Le Ca</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="/aboutme"><i class="fab fa-accessible-icon"></i><span>About me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lvcmarch23th" target="_blank" title="Github"><i class="fab fa-github" style="color: #dadfe8;"></i></a><a class="social-icon" href="https://www.facebook.com/le.ca.982335/" target="_blank" title="Facebook"><i class="fab fa-facebook" style="color: #dadfe8;"></i></a><a class="social-icon" href="https://t.me/CvShun" target="_blank" title="Telegram"><i class="fab fa-telegram" style="color: #dadfe8;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dinh-nghia-RL-Reinforcement-Learning"><span class="toc-number">1.</span> <span class="toc-text">Định nghĩa RL (Reinforcement Learning)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cac-thanh-phan-chinh-cua-RL"><span class="toc-number">1.1.</span> <span class="toc-text">Các thành phần chính của RL</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cach-thuc-RL-hoat-dong"><span class="toc-number">2.</span> <span class="toc-text">Cách thức RL hoạt động</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Phan-loai-RL"><span class="toc-number">3.</span> <span class="toc-text">Phân loại RL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hoc-theo-gia-tri"><span class="toc-number">3.1.</span> <span class="toc-text">Học theo giá trị</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ham-gia-tri"><span class="toc-number">3.1.1.</span> <span class="toc-text">Hàm giá trị</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Phuong-trinh-Bellman"><span class="toc-number">3.1.2.</span> <span class="toc-text">Phương trình Bellman</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Thuat-toan-Q-Learning"><span class="toc-number">3.1.3.</span> <span class="toc-text">Thuật toán Q-Learning</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hoc-theo-chinh-sach"><span class="toc-number">3.2.</span> <span class="toc-text">Học theo chính sách</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ham-chinh-sach"><span class="toc-number">3.2.1.</span> <span class="toc-text">Hàm chính sách</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gradient-chinh-sach"><span class="toc-number">3.2.2.</span> <span class="toc-text">Gradient chính sách</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Code-vi-du"><span class="toc-number">4.</span> <span class="toc-text">Code ví dụ</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cau-hinh-cac-thanh-phan-RL"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">Cấu hình các thành phần RL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ham-chon-hanh-dong-theo-epsilon-greedy"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">Hàm chọn hành động theo epsilon-greedy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ham-cap-nhat-trang-thai-sau-khi-hanh-dong"><span class="toc-number">4.0.0.3.</span> <span class="toc-text">Hàm cập nhật trạng thái sau khi hành động</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Huan-luyen-Q-learning"><span class="toc-number">4.0.0.4.</span> <span class="toc-text">Huấn luyện Q-learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ket-qua"><span class="toc-number">4.0.0.5.</span> <span class="toc-text">Kết quả</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/08/reinforcementlearning/" title="Reinforcement Learning">Reinforcement Learning</a><time datetime="2025-02-07T17:00:00.000Z" title="Created 2025-02-08 00:00:00">2025-02-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/28/steganography/" title="Steganography Project">Steganography Project</a><time datetime="2024-12-27T17:00:00.000Z" title="Created 2024-12-28 00:00:00">2024-12-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/03/bookstorewebsite/" title="Selling Books Website Project">Selling Books Website Project</a><time datetime="2024-06-02T17:00:00.000Z" title="Created 2024-06-03 00:00:00">2024-06-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Le Ca</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
