@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Khai thác lỗ hổng ProxyShell trên Microsoft Exchange Server | March23rd</title><meta name="author" content="Le Ca"><meta name="copyright" content="Le Ca"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Tổng quanProxyShell là tên gọi của một chuỗi tấn công khai thác lỗ hổng bảo mật nghiêm trọng của máy chủ Microsoft Exchange. Lỗ hổng này cho phép kẻ tấn công thực thi mã độc từ xa mà không cần xác thự">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Khai thác lỗ hổng ProxyShell trên Microsoft Exchange Server">
+<meta property="og:url" content="http://march-23th.github.io/2025/07/03/proxyshell/index.html">
+<meta property="og:site_name" content="March23rd">
+<meta property="og:description" content="Tổng quanProxyShell là tên gọi của một chuỗi tấn công khai thác lỗ hổng bảo mật nghiêm trọng của máy chủ Microsoft Exchange. Lỗ hổng này cho phép kẻ tấn công thực thi mã độc từ xa mà không cần xác thự">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://march-23th.github.io/assets/img/avt.jpg">
+<meta property="article:published_time" content="2025-07-02T17:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-03T14:08:19.339Z">
+<meta property="article:author" content="Le Ca">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://march-23th.github.io/assets/img/avt.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://march-23th.github.io/2025/07/03/proxyshell/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Khai thác lỗ hổng ProxyShell trên Microsoft Exchange Server',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-07-03 21:08:19'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/assets/img/avt.jpg" onerror="onerror=null;src='/assets/img/404.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/assets/img/default_top_img.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="March23rd"><span class="site-name">March23rd</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Khai thác lỗ hổng ProxyShell trên Microsoft Exchange Server</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-07-02T17:00:00.000Z" title="Created 2025-07-03 00:00:00">2025-07-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-07-03T14:08:19.339Z" title="Updated 2025-07-03 21:08:19">2025-07-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Project/">Project</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Khai thác lỗ hổng ProxyShell trên Microsoft Exchange Server"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Tong-quan"><a href="#Tong-quan" class="headerlink" title="Tổng quan"></a>Tổng quan</h1><p><strong>ProxyShell</strong> là tên gọi của một chuỗi tấn công khai thác lỗ hổng bảo mật nghiêm trọng của máy chủ Microsoft Exchange. Lỗ hổng này cho phép kẻ tấn công thực thi mã độc từ xa mà không cần xác thực, kiểm soát hoàn toàn máy chủ Exchange và xâm phạm vào các hệ thống khác trong mạng mục tiêu. Chuỗi khai thác lỗ hổng ProxyShell gồm 3 lỗ hổng bảo mật trên máy chủ Microsoft Exchange là <code>CVE-2021-34473</code>, <code>CVE-2021-34523</code>, <code>CVE-2021-31207</code>.</p>
+<h1 id="Kien-thuc-lien-quan"><a href="#Kien-thuc-lien-quan" class="headerlink" title="Kiến thức liên quan"></a>Kiến thức liên quan</h1><p><strong>Active Directory</strong>: là dịch vụ của Microsoft, tích hợp trong các hệ điều hành Windows Server từ phiên bản 2000 trở đi. AD cho phép  quản lý tập trung cho người dùng, thiết bị, chính sách bảo mật, tài nguyên như máy in, thư mục chia sẻ,… Domain Controller là máy chủ chạy AD, chịu trách nhiệm xác thực và phân quyền người dùng trong mạng nội bộ. Là nền tảng quan trọng trong hạ tầng mạng doanh nghiệp vừa và lớn.</p>
+<p><strong>Microsoft Exchange Server</strong>: là hệ thống máy chủ email chuyên nghiệp dành cho doanh nghiệp, hỗ trợ gửi&#x2F;nhận email, quản lý lịch, danh bạ và tích hợp với Outlook, Teams. Do sự phổ biển của Microsoft Exchange Server nên nó là một trong những mục tiêu tấn công hàng đầu của Attacker.</p>
+<p><strong>Một số công cụ khác liên quan</strong>: Havoc C2 Framework, Chisel, Pypykatz, WinRM, Procdump</p>
+<h1 id="Lo-hong-Proxyshell"><a href="#Lo-hong-Proxyshell" class="headerlink" title="Lỗ hổng Proxyshell"></a>Lỗ hổng Proxyshell</h1><p>Điều kiện khai thác: Máy chủ Microsoft Exchange chưa được cập nhật bản vá liên quan ProxyShell. Attacker có thể giao tiếp với máy chủ Exchange để gửi trực tiếp request HTTP&#x2F;HTTPS. Attacker có thể khai thác SSRF để bypass ACL và chiếm quyền NT AUTHORITY\SYSTEM, có khả năng tạo và sử dụng token giả mạo Exchange Admin thông qua tham số X-Rps-CAT.<br>Chuỗi khai thác gồm 3 CVE là <code>CVE-2021-34473</code>, <code>CVE-2021-34523</code>, <code>CVE-2021-31207</code>.</p>
+<h2 id="CVE-2021-34473-Pre-auth-Path-Confusion-leads-to-ACL-Bypass"><a href="#CVE-2021-34473-Pre-auth-Path-Confusion-leads-to-ACL-Bypass" class="headerlink" title="CVE-2021-34473: Pre-auth Path Confusion leads to ACL Bypass."></a>CVE-2021-34473: Pre-auth Path Confusion leads to ACL Bypass.</h2><p>Đây là lỗ hổng quan trọng trong ProxyShell xuất hiện trong cơ chế xử lý URL Explicit Logon của máy chủ Exchange. Explicit Logon là một tính năng của Microsoft Exchange cho phép người dùng đăng nhập vào mailbox của người dùng khác thông qua URL nếu họ có quyền truy cập vào mailbox đó. Lỗi này cho phép kẻ tấn công thực hiện một cuộc tấn công SSRF trước xác thực và buộc máy chủ Exchange gửi các yêu cầu nội bộ tới các dịch vụ backend, bỏ qua cơ chế kiểm soát truy cập.</p>
+<p><img src="/../assets/img/CVE-2021-34473-1.jpg" alt="MSE"></p>
+<p>Khi request được gửi ở dạng Explicit Logon, máy chủ Exchange sẽ thực hiện URL Normalization. Đoạn mã hình trên thuộc lớp <code>EwsAutodiscoverProxyRequestHandler</code> cho thấy URL sẽ bị xử lý và phần mailbox sẽ được xóa đi để chuyển tiếp đến backend. Attacker có thể chèn giá trị Email&#x3D; đặc biệt trong query string, Exchange sẽ xử lý sai phần URL, từ đó có thể điều hướng đến backend server mong muốn.</p>
+<p><img src="/../assets/img/CVE-2021-34473-2.jpg" alt="MSE"></p>
+<p>Ta có thể thấy phần sau Email là phần attacker chèn vào để định nghĩa giá trị của Explicit Logon. Còn phần trước sẽ được xử lý bởi đoạn code trên. Sau khi xử lý:</p>
+<p><img src="/../assets/img/CVE-2021-34473-3.jpg" alt="MSE"></p>
+<p>Kết quả ta có thể truy cập vào backend với quyền NT AUTHORITY\SYSTEM. Vì backend xử lý các yêu cầu nội bộ từ chính máy chủ Exchange nên khi attacker gửi request giả mạo từ bên ngoài, Exchange sẽ nghĩ rằng yêu cầu đến từ chính nó và xử lý với quyền SYSTEM.</p>
+<p><img src="/../assets/img/CVE-2021-34473-4.jpg" alt="MSE"></p>
+<h2 id="CVE-2021-34523-Elevation-of-Privilege-on-Exchange-PowerShell-Backend"><a href="#CVE-2021-34523-Elevation-of-Privilege-on-Exchange-PowerShell-Backend" class="headerlink" title="CVE-2021-34523: Elevation of Privilege on Exchange PowerShell Backend."></a>CVE-2021-34523: Elevation of Privilege on Exchange PowerShell Backend.</h2><p>Sau khi khai thác CVE-2021-34473 thì ta đã có thể truy cập backend với quyền NT AUTHORITY\SYSTEM. Tuy nhiên user NT AUTHORITY\SYSTEM không có mailbox, do đó không thể tương tác trực tiếp Powershell Remoting và không thể mở một Session PowerShell. Vì vậy cần ‘downgrade’ từ NT AUTHORITY\SYSTEM xuống Exchange Admin bằng cách giả mạo token của Exchange Admin<br>Microsoft Exchange có một module là <code>RemotePowershellBackendCmdletProxy</code> chịu trách nhiệm xử lý các yêu cầu đến endpoint &#x2F;powershell. Trong đoạn mã dưới đây cho thấy cách mà Exchange xử lý yêu cầu để hỗ trợ nội bộ giữa các dịch vụ. Tuy nhiên, chính cách xử lý thiếu kiểm tra này đã mở ra khả năng khai thác lỗ hổng CVE-2021-34523.</p>
+<p><img src="/../assets/img/CVE-2021-34523-1.jpg" alt="MSE"></p>
+<p><code>X-CommonAccessToken</code> là Header nội bộ được máy chủ Microsoft Exchange dùng để trao đổi thông tin xác thực giữa các dịch vụ backend. Token này đại diện cho danh tính người dùng đã xác thực và chứa các thông tin định danh của người dùng đó. Tuy nhiên thì Header này không thể bị giả mạo trực tiếp vì nó nằm trong blacklist header của Exchange do đó thì không thể lợi dụng bằng cách gửi Header giả. Mặc dù vậy thì nếu Header <code>X-CommonAccessToken</code> không tồn tại thì chương trình sẽ gọi đến hàm <code>CommonAccessTokenFromUrl</code>. </p>
+<p><img src="/../assets/img/CVE-2021-34523-2.jpg" alt="MSE"></p>
+<p>Nếu <code>X-CommonAccessToken</code> không tồn tại thì sẽ trích xuất access token từ tham số URL có tên là <code>X-Rps-CAT</code>. Đây là một cơ chế dự phòng nội bộ dành cho các dịch vụ khác trong máy chủ Exchange. Attacker có thể khai thác lỗ hổng bằng cách giả mạo tham số <code>X-Rps-CAT</code> để tạo token giả. Hệ thống sẽ chấp nhận token này và xem Attacker như là Exchange Admin. Lúc này Attacker có thể thực thi các lệnh Exchange PowerShell tùy ý với quyền Admin.</p>
+<h2 id="CVE-2021-31207-Post-auth-Arbitrary-File-Write-leads-to-RCE"><a href="#CVE-2021-31207-Post-auth-Arbitrary-File-Write-leads-to-RCE" class="headerlink" title="CVE-2021-31207: Post-auth Arbitrary-File-Write leads to RCE."></a>CVE-2021-31207: Post-auth Arbitrary-File-Write leads to RCE.</h2><p>Máy chủ Exchange cung cấp một lệnh là: <code>New-MailboxExportRequest</code> cho phép admin export mailbox của user dưới dạng một tệp .pst vào một đường dẫn chỉ định, tuy nhiên tham số -FilePath không kiểm tra phần file name extension do đó attacker có thể viết một file mã độc và lưu dưới bất kì file name extension nào như aspx. Exchange cũng có quyền ghi vào thư mục hệ thống (C$), attacker có thể ghi vào thư mục webroot của Exchange. Điều này sẽ dẫn đến RCE thông qua webshell.</p>
+<p><img src="/../assets/img/CVE-2021-31207-1.jpg" alt="MSE"></p>
+<p>Tuy nhiên Exchange sẽ không lưu email ở dạng plaintext mà được lưu dưới dạng Outlook Personal Folders (PST) và PST sử dụng thuật toán mã hóa gọi là Permutative Encoding (NDB_CRYPT_PERMUTE) để mã hóa payload. Ta có đoạn code xử lý phần mã hóa trong module <code>RemotePowershellBackendCmdletProxyModule.cs</code>, Bảng này định nghĩa cách các byte bị hoán đổi giá trị khi ghi vào file PST.</p>
+<p><img src="/../assets/img/CVE-2021-31207-2.jpg" alt="MSE"></p>
+<p>Khi attacker gửi payload qua email, nó sẽ bị encode lại trước khi ghi vào file .aspx. Giải pháp cho vấn đề này là chúng ta có thể mã hóa payload trước khi gửi đi và khi máy chủ cố gắng lưu và mã hóa payload nó sẽ biến payload được mã hóa đó thành payload gốc và thực thi từ đó có được reverse shell.</p>
+<h1 id="Kich-ban-trien-khai"><a href="#Kich-ban-trien-khai" class="headerlink" title="Kịch bản triển khai"></a>Kịch bản triển khai</h1><h2 id="Mo-hinh-mang"><a href="#Mo-hinh-mang" class="headerlink" title="Mô hình mạng"></a>Mô hình mạng</h2><p><img src="/../assets/img/mohinhmang.jpg" alt="MSE"></p>
+<h2 id="Kich-ban-trien-khai-1"><a href="#Kich-ban-trien-khai-1" class="headerlink" title="Kịch bản triển khai"></a>Kịch bản triển khai</h2><p>Attacker gửi mail phishing có đính kèm link tải file word chứa macro mã độc. Sau khi Client tải file word về và enable macro thì mã độc sẽ được thực thi và sẽ kết nối về C2 Server, lúc này attacker hoàn toàn điều khiển máy Client. Sau đó attacker tiến hành dò quét trong mạng nội bộ để kiểm tra xem IP của máy Exchange Server để khai thác lỗ hổng ProxyShell, Sau khi có được IP thì sẽ tiến hành dùng chisel để tạo một tunnel cho phép máy attacker và máy chủ Exchange có thể giao tiếp được với nhau do máy chủ Exchange nằm trong mạng nội bộ. Sau đó tiến hành chạy code khai thác lỗ hổng ProxyShell. Sau khi chiếm được máy chủ Exchange thì tiến hành khai thác thông tin domain.</p>
+<h2 id="Khai-thac-Proxyshell"><a href="#Khai-thac-Proxyshell" class="headerlink" title="Khai thác Proxyshell"></a>Khai thác Proxyshell</h2><p>Chạy code khai thác</p>
+<p><img src="/../assets/img/proxyshell1.jpg" alt="MSE"></p>
+<p>Đã có được shell của máy chủ Exchange</p>
+<p><img src="/../assets/img/proxyshell2.jpg" alt="MSE"></p>
+<p>Dump Credentials trong máy chủ Exchange</p>
+<p><img src="/../assets/img/dumpcredential.jpg" alt="MSE"></p>
+<p>Dùng WinRM để Lateral Movement sang máy chủ DC</p>
+<p><img src="/../assets/img/LM.jpg" alt="MSE"></p>
+<h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><p><a target="_blank" rel="noopener" href="https://github.com/lvcmarch23th/proxyshell.git">Báo cáo chi tiết + Code khai thác</a><br><a target="_blank" rel="noopener" href="https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-ProxyLogon-Is-Just-The-Tip-Of-The-Iceberg-A-New-Attack-Surface-On-Microsoft-Exchange-Server.pdf?_gl=1*1eowkhc*_gcl_au*MTc1NzM0MTk1Mi4xNzUwNzc4NDk3*_ga*MTI2NDMyMjc4Ny4xNzUwNzc4NDk3*_ga_K4JK67TFYV*czE3NTE1NDk5MTgkbzIkZzAkdDE3NTE1NDk5MTgkajYwJGwwJGgw&_ga=2.45454563.617618968.1751549919-1264322787.1750778497">Tham khảo</a></p>
+<hr>
+<br></article><div class="tag_share"><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/02/08/reinforcementlearning/" title="Reinforcement Learning"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Reinforcement Learning</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/assets/img/avt.jpg" onerror="this.onerror=null;this.src='/assets/img/404.jpg'" alt="avatar"/></div><div class="author-info__name">Le Ca</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="/aboutme"><i class="fab fa-accessible-icon"></i><span>About me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lvcmarch23th" target="_blank" title="Github"><i class="fab fa-github" style="color: #dadfe8;"></i></a><a class="social-icon" href="https://www.facebook.com/le.ca.982335/" target="_blank" title="Facebook"><i class="fab fa-facebook" style="color: #dadfe8;"></i></a><a class="social-icon" href="https://t.me/CvShun" target="_blank" title="Telegram"><i class="fab fa-telegram" style="color: #dadfe8;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Tong-quan"><span class="toc-number">1.</span> <span class="toc-text">Tổng quan</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Kien-thuc-lien-quan"><span class="toc-number">2.</span> <span class="toc-text">Kiến thức liên quan</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lo-hong-Proxyshell"><span class="toc-number">3.</span> <span class="toc-text">Lỗ hổng Proxyshell</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CVE-2021-34473-Pre-auth-Path-Confusion-leads-to-ACL-Bypass"><span class="toc-number">3.1.</span> <span class="toc-text">CVE-2021-34473: Pre-auth Path Confusion leads to ACL Bypass.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CVE-2021-34523-Elevation-of-Privilege-on-Exchange-PowerShell-Backend"><span class="toc-number">3.2.</span> <span class="toc-text">CVE-2021-34523: Elevation of Privilege on Exchange PowerShell Backend.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CVE-2021-31207-Post-auth-Arbitrary-File-Write-leads-to-RCE"><span class="toc-number">3.3.</span> <span class="toc-text">CVE-2021-31207: Post-auth Arbitrary-File-Write leads to RCE.</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Kich-ban-trien-khai"><span class="toc-number">4.</span> <span class="toc-text">Kịch bản triển khai</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mo-hinh-mang"><span class="toc-number">4.1.</span> <span class="toc-text">Mô hình mạng</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kich-ban-trien-khai-1"><span class="toc-number">4.2.</span> <span class="toc-text">Kịch bản triển khai</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Khai-thac-Proxyshell"><span class="toc-number">4.3.</span> <span class="toc-text">Khai thác Proxyshell</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Link"><span class="toc-number">5.</span> <span class="toc-text">Link</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/03/proxyshell/" title="Khai thác lỗ hổng ProxyShell trên Microsoft Exchange Server">Khai thác lỗ hổng ProxyShell trên Microsoft Exchange Server</a><time datetime="2025-07-02T17:00:00.000Z" title="Created 2025-07-03 00:00:00">2025-07-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/08/reinforcementlearning/" title="Reinforcement Learning">Reinforcement Learning</a><time datetime="2025-02-07T17:00:00.000Z" title="Created 2025-02-08 00:00:00">2025-02-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/28/steganography/" title="Steganography Project">Steganography Project</a><time datetime="2024-12-27T17:00:00.000Z" title="Created 2024-12-28 00:00:00">2024-12-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/03/bookstorewebsite/" title="Selling Books Website Project">Selling Books Website Project</a><time datetime="2024-06-02T17:00:00.000Z" title="Created 2024-06-03 00:00:00">2024-06-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Le Ca</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
